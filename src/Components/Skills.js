@@ -18,7 +18,7 @@ const Skills = ({skill}) => {
         Github : <FaGithub/>,
         Npm : <FaNpm/>,
         Figma : <FaFigma/>,
-        'Tailwind': <img src="../images/tailwindcss.svg" alt="Tailwind CSS" className="w-6 h-6" />,
+        // 'Tailwind': <img src="../images/tailwindcss.svg" alt="Tailwind CSS" className="w-6 h-6" />,
         Bootstrap: <FaBootstrap/>,
         Vercel : <SiVercel/>
     }

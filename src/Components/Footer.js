@@ -42,7 +42,7 @@ const Footer = () => {
           <FaGithub />
         </a>
         <a
-          href="www.linkedin.com/in/harsh-kubavat-55a615289"
+          href="https://www.linkedin.com/in/harsh-kubavat-55a615289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target='_blank'
           rel="noopener noreferrer"
           style={{ fontSize: '1.8rem', color: '#0077b5' }}
