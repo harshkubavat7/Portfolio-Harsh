@@ -1,52 +1,57 @@
 import React from 'react';
-import {FaGithub} from "react-icons/fa";
-import {CgFileDocument} from "react-icons/cg";
+import { FaGithub } from "react-icons/fa";
+import { CgFileDocument } from "react-icons/cg";
 
 
-const  ProjectBox = ({projectPhoto, projectName}) => {
+const ProjectBox = ({ projectPhoto, projectName }) => {
   const desc = {
-    TindogDesc : "This website is a landing page of Tinder but for dogs. It is a responsive website which was made to understand Bootstrap. I also learned how to host my project on Github and then how to deploy that project using Github pages.",
-    TindogGithub : "https://github.com/DevanshSahni/tindog",
-    TindogWebsite : "https://devanshsahni.github.io/tindog/",
+    BlogSite: {
+      Desc: "This website allows users to explore and read a variety of blogs on different topics. Readers can easily browse, search, and enjoy engaging content shared by authors, making it a simple and accessible platform for staying informed and inspired.",
+      Github: "https://github.com/harshkubavat7/rodinblogs",
+      // Website: "https://devanshsahni.github.io/tindog/"
+    },
+    ShoppingPage: {
+      Desc: "This page lets customers browse a wide range of clothes and other products, add items to their cart, and complete their purchase easily and securely. It’s designed to provide a smooth shopping experience with clear product details, images, and convenient checkout options.",
+      Github: "https://github.com/harshkubavat7/shopping-cart",
+      // Website: "https://devanshsahni.github.io/Rog-Free/"
+    },
+    CourseSite: {
+      Desc: "This project is a course management platform where students can browse, enroll in, or purchase courses of their choice. The system also provides an admin panel through which administrators can create, update, and publish new courses for students to access. The goal is to make learning accessible and easy to manage for both students and administrators.",
+      Github: "https://github.com/harshkubavat7/learning-site",
+      // Website: "https://newsletter-signup-teal.vercel.app/"
+    },
+    JobPortal: {
+      Desc: "A full-stack job portal for modern hiring. Applicants can register, search jobs, apply, and upload resumes. Recruiters can create companies, post jobs, review applicants, download resumes, and update application statuses in real time.",
+      Github: "https://github.com/harshkubavat7/JobLink",
+      // Website: "https://wiggles.vercel.app/"
+    }
+  };
 
-    RogFreeDesc : "A website that shows you over seven specialized yoga postures for specific diseases or health problems. This was a group project made in a team of two for a 36-hour-long online hackathon named Hackodisha 2.0.",
-    RogFreeGithub : "https://github.com/DevanshSahni/Rog-Free",
-    RogFreeWebsite : "https://devanshsahni.github.io/Rog-Free/",
+  const project = desc[projectName];
+  const showGithub = project.Github !== "";
 
-    NewsletterDesc:"A newsletter signup site made using Mailchimp API where the signups can be monitored from the MailChimp account. This project was made to understand API integration, environment variables and vercel deployment.",
-    NewsletterGithub:"",
-    NewsletterWebsite:"https://newsletter-signup-teal.vercel.app/",
-    
-    WigglesDesc:"An innovative pet management web app enabling pet parents to create unique pet IDs, securely store and share vaccination records, and generate QR codes for pet profiles, enhancing safety.",
-    WigglesGithub:"https://github.com/DevanshSahni/Wiggles",
-    WigglesWebsite:"https://wiggles.vercel.app/",
-  }
-
-  let show ='';
-  if(desc[projectName + 'Github']===""){
-    show="none";
-  }
-    
   return (
-    <div className='projectBox'> 
-        <img className='projectPhoto' src={projectPhoto} alt="Project display" /> 
-        <div>
-            <br />
-            <h3>{projectName}</h3>
-            <br />
-            {desc[projectName + 'Desc']}
-            <br />
+    <div className='projectBox'>
+      <img className='projectPhoto' src={projectPhoto} alt="Project display" />
+      <div>
+        <br />
+        <h3>{projectName}</h3>
+        <br />
+        <p className='projectDescription'>{project.Desc}</p>
+        <br />
 
-            <a style={{display:show}} href={desc[projectName + 'Github']} target='_blank'>
-              <button className='projectbtn'><FaGithub/> Github</button>
-            </a>
+        {showGithub && (
+          <a href={project.Github} target='_blank' rel='noopener noreferrer'>
+            <button className='projectbtn'><FaGithub /> Github</button>
+          </a>
+        )}
 
-            <a href={desc[projectName + 'Website']} target='_blank'>
-              <button className='projectbtn'><CgFileDocument/> Demo</button>
-            </a>
-        </div>
+        <a href={project.Website} target='_blank' rel='noopener noreferrer'>
+          {/* <button className='projectbtn'><CgFileDocument /> Demo</button> */}
+        </a>
+      </div>
     </div>
-  )
+  );
 }
 
-export default  ProjectBox
+export default ProjectBox;
